@@ -6,7 +6,7 @@ const Footer = () => {
     <div className="footer-section border-top">
       <div className="container">
         <div className="row">
-          <div className="col-md-4">
+          <div className="col-md-4 mb-4">
             <p className="font-sz-medium font-wg-500 mb-4">Need My Travel Help?</p>
 
             <div>
@@ -32,7 +32,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="col-md-2">
+          <div className="col-md-2 mb-4">
             <p className="font-sz-medium font-wg-500 mb-4">Company</p>
 
             <div className="links">
@@ -44,7 +44,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="col-md-2">
+          <div className="col-md-2 mb-4">
             <p className="font-sz-medium font-wg-500 mb-4">Explore</p>
 
             <div className="links">
@@ -56,7 +56,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="col-md-4">
+          <div className="col-md-4 mb-4">
             <p className="font-sz-medium font-wg-500 mb-4">Mailing List</p>
 
             <p>Sign up for our mailing list to get latest updates and offers.</p>
@@ -70,7 +70,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="row mt-5">
+        <div className="row mt-1">
           <div className="col-md-12 mt-5">
             <p className="color-dark font-sz-normal text-center">Copyright &copy; 2022 GoDiscoverAfrica. Allrights Reserved</p>
           </div>

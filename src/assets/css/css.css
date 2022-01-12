@@ -141,6 +141,12 @@
   transition: all 0.4s ease;
 }
 
+@media screen and (max-width: 780px) {
+  .destination .links {
+    display: block !important;
+  }
+}
+
 .trending-section .category .btn {
   border-radius: 22px;
 }

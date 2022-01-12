@@ -33,28 +33,28 @@ const ItemCar = ({ isFeatured }) => {
         <span className="py-1"><hr /></span>
 
         <div className="row">
-          <div className="col-md-6 mb-2">
+          <div className="col-6 col-md-6 mb-2">
             <p className="color-grey-1">
               <i className="bi bi-cone mr-1"></i>
               5 Seats
             </p>
           </div>
 
-          <div className="col-md-6 mb-2">
+          <div className="col-6 col-md-6 mb-2">
             <p className="color-grey-1">
               <i className="bi bi-cone mr-1"></i>
               9 Baggage
             </p>
           </div>
 
-          <div className="col-md-6 mb-2">
+          <div className="col-6 col-md-6 mb-2">
             <p className="color-grey-1">
               <i className="bi bi-cone mr-1"></i>
               4 Auto
             </p>
           </div>
 
-          <div className="col-md-6 mb-2">
+          <div className="col-6 col-md-6 mb-2">
             <p className="color-grey-1">
               <i className="bi bi-cone mr-1"></i>
               4 Door
