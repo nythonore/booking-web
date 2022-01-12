@@ -121,7 +121,9 @@
 }
 
 .destination .links a {
-  display: block;
+  display: table;
+  float: left;
+  clear: left;
   color: #ffffff;
   margin-bottom: 15px;
   transition: all 0.4s ease;
@@ -194,7 +196,9 @@
 }
 
 .footer-section .links a {
-  display: block;
+  display: table;
+  float: left;
+  clear: left;
   padding: 5px 0;
   color: #868e96;
   transition: all 0.4s ease;
