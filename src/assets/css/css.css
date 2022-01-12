@@ -1,0 +1,226 @@
+.client-navbar {
+  height: 70px;
+}
+
+.client-navbar.navbar .nav-link {
+  text-transform: uppercase !important;
+  font-weight: 500;
+  font-size: 14px;
+  color: #404E67;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.hero {
+  min-height: calc(100vh - 120px);
+  background: linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.6)), url('https://media.gq-magazine.co.uk/photos/5d13ab1c4d217b15e24bee14/16:9/w_2560%2Cc_limit/rwanda-02-gq-11dec18_b.jpg') no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 50px 0;
+}
+
+.hero .title h2 {
+  font-size: 52px;
+  font-weight: 500;
+}
+
+.hero .title p {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.hero .tabs .icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.hero .tabs .icon i {
+  color: #ffffff;
+  font-size: 18px;
+}
+
+.hero .form .bg-white {
+  border-radius: 4px;
+}
+
+.hero .form .input-group .input-group-text {
+  border: none;
+  background: transparent;
+  border-radius: 0;
+  border-bottom: 1px solid #485056;
+}
+
+.hero .form .form-control {
+  height: 50px;
+  font-size: 16px;
+  border: none;
+  color: #485056;
+  border-radius: 0;
+  border-bottom: 1px solid #485056;
+}
+
+.hero .form .form-control::placeholder {
+  color: #485056; 
+}
+
+.hero .form .btn {
+  height: 50px;
+  left: 40%;
+  position: absolute;
+  border-radius: 22px;
+}
+
+@media  screen and (max-width: 780px) {
+  .hero .form .btn {
+    height: 50px;
+    width: 80%;
+    left: 10%;
+  } 
+}
+
+.destination-section,
+.trending-section,
+.why-section,
+.blog-section,
+.footer-section {
+  padding: 50px 0;
+}
+
+.destination {
+  min-height: 330px;
+  background: linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.6)), url('https://media.gq-magazine.co.uk/photos/5d13ab1c4d217b15e24bee14/16:9/w_2560%2Cc_limit/rwanda-02-gq-11dec18_b.jpg') no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 30px 15px;
+  border-radius: 8px;
+  transition: all 0.4s ease;
+}
+
+.destination:hover {
+  background: linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.8)), url('https://media.gq-magazine.co.uk/photos/5d13ab1c4d217b15e24bee14/16:9/w_2560%2Cc_limit/rwanda-02-gq-11dec18_b.jpg') no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 30px 20px;
+  border-radius: 8px;
+  transition: all 0.4s ease;
+}
+
+.destination .line {
+  width: 15%;
+  height: 3px;
+  border-radius: 4px;
+  background: #ffffff;
+  margin-top: 15px;
+}
+
+.destination .links {
+  display: none;
+  transition: all 0.4s ease;
+}
+
+.destination .links a {
+  display: block;
+  color: #ffffff;
+  margin-bottom: 15px;
+  transition: all 0.4s ease;
+}
+
+.destination .links a:hover,
+.destination .links a:active,
+.destination .links a:focus {
+  color: #D42681;
+  transition: all 0.4s ease;
+}
+
+.destination:hover .links,
+.destination:active .links,
+.destination:focus .links {
+  display: block;
+  transition: all 0.4s ease;
+}
+
+.trending-section .category .btn {
+  border-radius: 22px;
+}
+
+.item .image {
+  min-height: 210px;
+  background: linear-gradient(rgba(0,0,0,.01),rgba(0,0,0,.8)), url('https://i.pinimg.com/originals/c7/05/82/c70582ace59a21310b39b838b19ef5e6.jpg') no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 20px 15px;
+  transition: all 0.4s ease;
+}
+
+.item:hover .image,
+.item:active .image,
+.item:focus .image {
+  min-height: 210px;
+  background: linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.8)), url('https://i.pinimg.com/originals/c7/05/82/c70582ace59a21310b39b838b19ef5e6.jpg') no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 20px 15px;
+  transition: all 0.4s ease;
+}
+
+.item .image .featured {
+  background: #D42681 !important;
+  color: #ffffff;
+  padding: 6px 15px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 400;
+  border: 1px solid #D42681;
+}
+
+.why-section i {
+  font-size: 54px;
+}
+
+.title-line {
+  width: 60px;
+  height: 3px;
+  border-radius: 4px;
+  background: #D42681;
+  margin-top: 15px;
+}
+
+.footer-section .links a {
+  display: block;
+  padding: 5px 0;
+  color: #868e96;
+  transition: all 0.4s ease;
+}
+
+.footer-section .links a:hover,
+.footer-section .links a:active,
+.footer-section .links a:focus {
+  color: #D42681;
+  transition: all 0.4s ease;
+}
+
+.footer-section .social a {
+  display: inline-block;
+  width: 40px !important;
+  height: 40px !important;
+  text-align: center;
+  line-height: 40px;
+  border: 1px solid #485056;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.footer-section .social a:hover,
+.footer-section .social a:active,
+.footer-section .social a:focus {
+  background: #D42681;
+  color: #ffffff;
+}
+
+.blog-section a:hover,
+.blog-section a:active,
+.blog-section a:focus {
+  color: #D42681;
+}
