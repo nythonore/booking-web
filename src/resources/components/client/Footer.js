@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="footer-section border-top">
+    <div className="footer-section border-top bg-grey">
       <div className="container">
         <div className="row">
           <div className="col-md-4 mb-4">
@@ -36,11 +36,11 @@ const Footer = () => {
             <p className="font-sz-medium font-wg-500 mb-4">Company</p>
 
             <div className="links">
-              <Link to="/">{`>`} &nbsp; Blog</Link>
-              <Link to="/">{`>`} &nbsp; About Us</Link>
-              <Link to="/">{`>`} &nbsp; Contact Us</Link>
-              <Link to="/">{`>`} &nbsp; Terms & Privacy</Link>
-              <Link to="/">{`>`} &nbsp; Partners</Link>
+              <Link to="/blog">{`>`} &nbsp; Blog</Link>
+              <Link to="/about">{`>`} &nbsp; About Us</Link>
+              <Link to="/contact">{`>`} &nbsp; Contact Us</Link>
+              <Link to="/terms-privacy">{`>`} &nbsp; Terms & Privacy</Link>
+              <Link to="/partner">{`>`} &nbsp; Partners</Link>
             </div>
           </div>
 
@@ -48,11 +48,11 @@ const Footer = () => {
             <p className="font-sz-medium font-wg-500 mb-4">Explore</p>
 
             <div className="links">
-              <Link to="/">{`>`} &nbsp; Hotels</Link>
-              <Link to="/">{`>`} &nbsp; Spaces</Link>
-              <Link to="/">{`>`} &nbsp; Tours</Link>
-              <Link to="/">{`>`} &nbsp; Cars</Link>
-              <Link to="/">{`>`} &nbsp; Events</Link>
+              <Link to="/hotel">{`>`} &nbsp; Hotels</Link>
+              <Link to="/space">{`>`} &nbsp; Spaces</Link>
+              <Link to="/tour">{`>`} &nbsp; Tours</Link>
+              <Link to="/car">{`>`} &nbsp; Cars</Link>
+              <Link to="/event">{`>`} &nbsp; Events</Link>
             </div>
           </div>
 

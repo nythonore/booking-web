@@ -16,11 +16,11 @@ const NavBar = () => {
         <Navbar.Collapse id="basic-navbar">
           <Nav className="ml-auto">
             <Nav.Link as={Link} to="/">Home</Nav.Link>
-            <Nav.Link as={Link} to="/">Hotels</Nav.Link>
-            <Nav.Link as={Link} to="/">Spaces</Nav.Link>
-            <Nav.Link as={Link} to="/">Tours</Nav.Link>
-            <Nav.Link as={Link} to="/">Cars</Nav.Link>
-            <Nav.Link as={Link} to="/">Events</Nav.Link>
+            <Nav.Link as={Link} to="/hotel">Hotels</Nav.Link>
+            <Nav.Link as={Link} to="/space">Spaces</Nav.Link>
+            <Nav.Link as={Link} to="/tour">Tours</Nav.Link>
+            <Nav.Link as={Link} to="/car">Cars</Nav.Link>
+            <Nav.Link as={Link} to="/event">Events</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

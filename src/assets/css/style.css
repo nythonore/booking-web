@@ -20,6 +20,10 @@ p {
   margin: 0;
 }
 
+iframe {
+  border: none;
+}
+
 textarea {
   resize: none;
 }
@@ -106,7 +110,7 @@ label {
 
 /* background class */
 .bg-white {
-  background: #ffffff;
+  background: #ffffff !important;
 }
 
 .bg-dark {

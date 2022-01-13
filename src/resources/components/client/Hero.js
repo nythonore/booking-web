@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button, InputGroup, FormControl } from "react-bootstrap";
 
 const Hero = () => {
@@ -13,6 +14,12 @@ const Hero = () => {
   ];
 
   const formInputClass = `col-12 mb-3 ${['Hotel', 'Space'].includes(tab) ? 'col-md-4' : 'col-md-6'}`;
+
+  const navigate = useNavigate();
+
+  const handleSubmit = () => {
+    navigate(tab.toLowerCase());
+  }
 
   return (
     <div className="hero d-flex align-items-center">
@@ -77,7 +84,7 @@ const Hero = () => {
                         }
                       </div>
 
-                      <Button className="bg-primary px-5">
+                      <Button className="bg-primary px-5" onClick={handleSubmit}>
                         <i className="bi bi-search mr-2"></i>
                         <span className="text-uppercase">Search</span>
                       </Button>

@@ -11,6 +11,20 @@
   padding-right: 10px;
 }
 
+.explore-banner {
+  min-height: 25vh;
+  background: linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.6)), url('https://media.gq-magazine.co.uk/photos/5d13ab1c4d217b15e24bee14/16:9/w_2560%2Cc_limit/rwanda-02-gq-11dec18_b.jpg') no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 50px 0;
+}
+
+.explore-banner .form {
+  position: absolute;
+  width: 100%;
+}
+
 .hero {
   min-height: calc(100vh - 120px);
   background: linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.6)), url('https://media.gq-magazine.co.uk/photos/5d13ab1c4d217b15e24bee14/16:9/w_2560%2Cc_limit/rwanda-02-gq-11dec18_b.jpg') no-repeat;
@@ -41,18 +55,21 @@
   font-size: 18px;
 }
 
-.hero .form .bg-white {
+.hero .form .bg-white,
+.explore-banner .form .bg-white {
   border-radius: 4px;
 }
 
-.hero .form .input-group .input-group-text {
+.hero .form .input-group .input-group-text,
+.explore-banner .form .input-group .input-group-text {
   border: none;
   background: transparent;
   border-radius: 0;
   border-bottom: 1px solid #485056;
 }
 
-.hero .form .form-control {
+.hero .form .form-control,
+.explore-banner .form .form-control {
   height: 50px;
   font-size: 16px;
   border: none;
@@ -61,7 +78,8 @@
   border-bottom: 1px solid #485056;
 }
 
-.hero .form .form-control::placeholder {
+.hero .form .form-control::placeholder,
+.explore-banner .form .form-control::placeholder {
   color: #485056; 
 }
 
@@ -84,7 +102,8 @@
 .trending-section,
 .why-section,
 .blog-section,
-.footer-section {
+.footer-section,
+.contact-section {
   padding: 50px 0;
 }
 
@@ -233,4 +252,21 @@
 .blog-section a:active,
 .blog-section a:focus {
   color: #D42681;
+}
+
+.contact-section .form-control {
+  height: 55px;
+}
+
+.contact-section .form-control:hover,
+.contact-section .form-control:active,
+.contact-section .form-control:focus {
+  border: 2px solid #036BAE;
+}
+
+.contact-section textarea,
+.contact-section textarea:hover,
+.contact-section textarea:active,
+.contact-section textarea:focus {
+  height: 120px !important;
 }

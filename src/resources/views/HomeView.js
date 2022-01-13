@@ -125,7 +125,7 @@ const HomeView = () => {
         </div>
       </div>
 
-      <div className="blog-section">
+      <div className="blog-section bg-white">
         <div className="container">
           <div className="row">
             <div className="col-md-12">
