@@ -270,3 +270,9 @@
 .contact-section textarea:focus {
   height: 120px !important;
 }
+
+.user_item_img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}

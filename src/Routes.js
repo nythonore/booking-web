@@ -9,6 +9,7 @@ import AboutView from "./resources/views/AboutView";
 import PartnerView from "./resources/views/PartnerView";
 import TermsPrivacyView from "./resources/views/TermsPrivacyView";
 import ItemFilterView from "./resources/views/item/ItemFilterView";
+import ItemDetailView from "./resources/views/item/ItemDetailView";
 
 const Routes = () => {
   return useRoutes([
@@ -20,7 +21,7 @@ const Routes = () => {
           path: ':category',
           children: [
             { path: '', element: <ItemFilterView /> },
-            { path: ':slug', element: <HomeView /> },
+            { path: ':slug', element: <ItemDetailView /> },
           ]
         },
 
