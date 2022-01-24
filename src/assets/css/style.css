@@ -1,39 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap');
 
 body {
-  width: 100%;
-  height: auto;
-  font-family: 'Rubik', sans-serif;
-  font-size: 14px;
-  line-height: 1.5;
-  color: #485056 !important;
+	width: 100%;
+	height: auto;
+	font-family: 'Rubik', sans-serif;
+	font-size: 14px;
+	line-height: 1.5;
+	color: #485056 !important;
 }
 
-a, a:hover, a:active, a:focus {
-  text-decoration-color: none;
-  text-decoration: none;
-  outline: none;
-  color: inherit;
+a,
+a:hover,
+a:active,
+a:focus {
+	text-decoration-color: none;
+	text-decoration: none;
+	outline: none;
+	color: inherit;
 }
 
 p {
-  margin: 0;
+	margin: 0;
 }
 
 iframe {
-  border: none;
+	border: none;
 }
 
 textarea {
-  resize: none;
+	resize: none;
 }
 
 label {
-  font-weight: 500;
+	font-weight: 500;
 }
 
 .cursor {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 /* custom bootstrap class */
@@ -41,175 +44,182 @@ label {
 .form-control:hover,
 .form-control:active,
 .form-control:focus {
-  font-size: 14px;
-  border-radius: 2px;
-  border: 2px solid #ededed;
-  height: 45px;
-  box-shadow: none;
-  outline: none;
+	font-size: 14px;
+	border-radius: 2px;
+	border: 2px solid #ededed;
+	height: 45px;
+	box-shadow: none;
+	outline: none;
 }
 
 .form-control::placeholder {
-  color: #868e96;
+	color: #868e96;
 }
 
-.btn, .btn:hover, .btn:active, .btn:focus {
-  border-radius: 2px;
-  border: none;
-  height: 45px;
-  box-shadow: none;
-  outline: none;  
+.btn,
+.btn:hover,
+.btn:active,
+.btn:focus {
+	border-radius: 2px;
+	border: none;
+	height: 45px;
+	box-shadow: none;
+	outline: none;
 }
 
 .noborder {
-  border: none !important;
+	border: none !important;
 }
 
 .dropdown button::after {
-  display: none !important;
+	display: none !important;
 }
 
 /* font size class */
 .font-sz-large {
-  font-size: 24px;
-  line-height: 24px;
+	font-size: 24px;
+	line-height: 24px;
 }
 
 .font-sz-title {
-  font-size: 18px;
+	font-size: 18px;
 }
 
 .font-sz-medium {
-  font-size: 16px;
+	font-size: 16px;
 }
 
 .font-sz-normal {
-  font-size: 14px;
+	font-size: 14px;
 }
 
 .font-sz-small {
-  font-size: 12px;
+	font-size: 12px;
 }
 
 /* font weight class */
 .font-wg-700 {
-  font-weight: 700;
+	font-weight: 700;
 }
 
 .font-wg-500 {
-  font-weight: 500;
+	font-weight: 500;
 }
 
 .font-wg-400 {
-  font-weight: 400;
+	font-weight: 400;
 }
 
 .font-wg-300 {
-  font-weight: 300;
+	font-weight: 300;
 }
 
 /* background class */
 .bg-white {
-  background: #ffffff !important;
+	background: #ffffff !important;
 }
 
 .bg-dark {
-  background: #404E67;
+	background: #404e67 !important;
 }
 
 .bg-grey {
-  background: #F6F7FB;
+	background: #f6f7fb;
 }
 
 .bg-primary {
-  background: #036BAE !important;
+	background: #036bae !important;
 }
 
 .bg-success {
-  background: #5DBA00;
+	background: #5dba00;
 }
 
 .bg-warning {
-  background: #F1C40E !important;
+	background: #f1c40e !important;
 }
 
 .bg-danger {
-  background: #CC201F !important;
+	background: #cc201f !important;
 }
 
 .bg-danger-1 {
-  background: #D42681 !important;
+	background: #d42681 !important;
 }
 
 /* color class */
 .color-black {
-  color: #000000;
+	color: #000000;
 }
 
 .color-dark {
-  color: #404E67;
+	color: #404e67;
+}
+
+.color-white {
+	color: #ffffff;
 }
 
 .color-grey {
-  color: #F6F7FB;
+	color: #f6f7fb;
 }
 
 .color-grey-1 {
-  color: #868e96;
+	color: #868e96;
 }
 
 .color-grey-2 {
-  color: #485056;
+	color: #485056;
 }
 
 .color-primary {
-  color: #036BAE;
+	color: #036bae;
 }
 
 .color-success {
-  color: #5DBA00;
+	color: #5dba00;
 }
 
 .color-warning {
-  color: #F1C40E;
+	color: #f1c40e;
 }
 
 .color-danger {
-  color: #CC201F;
+	color: #cc201f;
 }
 
 .color-danger-1 {
-  color: #D42681;
+	color: #d42681;
 }
 
 /* device size */
 .device-md-hide {
-  display: block;
+	display: block;
 }
 
 .device-lg-hide {
-  display: none;
+	display: none;
 }
 
 .table-hover tbody tr:hover {
-  background-color: #F6F7FB !important;
-  cursor: pointer;
+	background-color: #f6f7fb !important;
+	cursor: pointer;
 }
 
 .border-rd-4 {
-  border-radius: 8px;
+	border-radius: 8px;
 }
 
 @media screen and (max-width: 780px) {
-  .device-md-hide {
-    display: none;
-  }
+	.device-md-hide {
+		display: none;
+	}
 
-  .device-lg-hide {
-    display: initial;
-  }
+	.device-lg-hide {
+		display: initial;
+	}
 }
 
 .height-vh-100 {
-  min-height: 100vh;
+	min-height: 100vh;
 }
