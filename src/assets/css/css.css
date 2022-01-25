@@ -338,7 +338,7 @@
 }
 
 .account-ly .body {
-	min-height: 100vh;
+	min-height: 100%;
 	background: #f4f7f9;
 }
 
@@ -365,4 +365,12 @@
 .btn.color-white:active,
 .btn.color-white:focus {
 	color: #ffffff;
+}
+
+.badge.bg-secondary:hover {
+	color: #ffffff;
+}
+
+a.btn {
+	line-height: 35px;
 }

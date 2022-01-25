@@ -99,25 +99,6 @@ const ItemDetailView = () => {
                 }
               </div>
             </div>
-
-            <div className="py-3"><hr /></div>
-
-            <div>
-              <p className="color-primary font-sz-title font-wg-500 text-uppercase">Hotel Service</p>
-
-              <div className="row mt-4">
-                {
-                  [1, 2, 3, 4, 5, 6].map((_, key) => (
-                    <div key={key} className="col-md-4">
-                      <p className="mb-3">
-                        <i className="bi bi-alarm color-primary mr-2 font-sz-title"></i>
-                        Wake-up call
-                      </p>
-                    </div>
-                  ))
-                }
-              </div>
-            </div>
           </div>
 
           <div className="col-md-3">

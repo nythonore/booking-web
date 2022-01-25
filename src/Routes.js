@@ -56,12 +56,16 @@ const Routes = () => {
 				{
 					path: 'booking',
 					children: [
-						{ path: 'list', element: <BookingListView /> },
-						{ path: 'create', element: <h2>Booking Create</h2> },
-						{ path: ':item/edit', element: <h2>Booking Edit</h2> },
 						{ path: 'history', element: <BookingHistoryview /> },
+						{ path: ':category', element: <BookingListView /> },
+						{ path: ':category/create', element: <h2>Booking Create</h2> },
+						{ path: ':category/edit/:item', element: <h2>Booking Edit</h2> },
 					],
 				},
+
+				{ path: 'blog', element: <h2>Blog</h2> },
+				{ path: 'customer', element: <h2>Customer</h2> },
+				{ path: 'maillist', element: <h2>MailList</h2> },
 
 				{ path: 'profile', element: <ProfileView /> },
 				{ path: 'password/change', element: <ChangePasswordView /> },

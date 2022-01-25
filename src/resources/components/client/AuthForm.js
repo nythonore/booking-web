@@ -55,7 +55,7 @@ const AuthForm = ({ loginShow, setLoginShow }) => {
 								</p>
 							</div>
 
-							<Button className='btn-danger btn-block font-wg-500 font-sz-normal text-uppercase mt-4'>
+							<Button className='btn-primary btn-block font-wg-500 font-sz-normal text-uppercase mt-4'>
 								Log in
 							</Button>
 						</Form>
@@ -140,7 +140,7 @@ const AuthForm = ({ loginShow, setLoginShow }) => {
 								/>
 							</p>
 
-							<Button className='bg-danger color-white btn-block font-wg-500 font-sz-normal text-uppercase mt-4'>
+							<Button className='bg-primary color-white btn-block font-wg-500 font-sz-normal text-uppercase mt-4'>
 								Sign up
 							</Button>
 						</Form>

@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 import { Breadcrumb } from 'react-bootstrap';
 
-const PageHeader = ({ title }) => {
+const PageHeader = ({ children, title }) => {
 	return (
-		<div className='page-header'>
+		<div className='page-header text-capitalize'>
 			<Breadcrumb className='shadow-sm'>
 				<Breadcrumb.Item as={Link} to='/'>
 					<i className='bi bi-house mr-1'></i>
@@ -13,7 +13,11 @@ const PageHeader = ({ title }) => {
 				<Breadcrumb.Item active>{title}</Breadcrumb.Item>
 			</Breadcrumb>
 
-			<h2 className='font-sz-large font-wg-700 pt-3 pb-4'>{title}</h2>
+			<div className='py-3 d-flex justify-content-between align-items-center'>
+				<h2 className='font-sz-large font-wg-700 mb-3'>{title}</h2>
+
+				<div>{children}</div>
+			</div>
 		</div>
 	);
 };

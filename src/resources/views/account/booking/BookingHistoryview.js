@@ -66,7 +66,7 @@ const BookingHistoryview = () => {
 							<tbody>
 								{[1, 2, 3, 4, 5].map((_, key) => (
 									<tr key={key}>
-										<td className='font-sz-normal font-wg-300 color-dark'>
+										<td className='text-center font-sz-normal font-wg-300 color-dark'>
 											{key + 1}
 										</td>
 										<td className='font-sz-normal font-wg-300 color-dark'>
