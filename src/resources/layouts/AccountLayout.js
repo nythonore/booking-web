@@ -76,13 +76,13 @@ const AccountLayout = () => {
 			label: 'My Profile',
 			icon: 'bi bi-person',
 			path: '/account/profile',
-			role: ['customer'],
+			role: ['customer', 'admin'],
 		},
 		{
 			label: 'Change Password',
 			icon: 'bi bi-lock',
 			path: '/account/password/change',
-			role: ['customer'],
+			role: ['customer', 'admin'],
 		},
 	];
 

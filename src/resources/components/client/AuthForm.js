@@ -49,7 +49,7 @@ const AuthForm = ({ loginShow, setLoginShow }) => {
 								/>
 
 								<p className='text-right mt-2'>
-									<Link to='#' className='color-danger font-wg-500'>
+									<Link to='#' className='color-primary font-wg-500'>
 										Forgot Password?
 									</Link>
 								</p>
