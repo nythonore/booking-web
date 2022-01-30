@@ -2,6 +2,11 @@ FROM node:14-alpine AS builder
 
 ENV NODE_ENV production
 
+ENV REACT_APP_GRAPHQL_URL=https://api.godiscoverafrica.rw/graphql
+ENV REACT_APP_TINYMCE_API_KEY=vocxqksl1lger7ttak7q87j3trvipgvjttvpp4fl4dfs4ddb
+ENV REACT_APP_CLOUDNARY_PRESET=godiscoverafrica
+ENV REACT_APP_CLOUDNARY_URL=https://api.cloudinary.com/v1_1/elab/upload
+
 # Add a work directory
 WORKDIR /app
 

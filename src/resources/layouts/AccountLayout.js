@@ -1,88 +1,99 @@
 import { useEffect } from 'react';
+import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { Container, Row, Col, Image, Badge } from 'react-bootstrap';
-import { Link, Outlet, useLocation } from 'react-router-dom';
+import jwtDecode from 'jwt-decode';
 
 const AccountLayout = () => {
-	const { pathname } = useLocation();
+	const token = localStorage.getItem('token');
+	const user = token ? jwtDecode(token) : { role: null };
 
-	const role = 'admin';
+	const { pathname } = useLocation();
+	const navigate = useNavigate();
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
+
+		if (!token) navigate('/');
+		// eslint-disable-next-line
 	}, [pathname]);
+
+	const handleLogout = () => {
+		localStorage.clear();
+		window.location.href = '/';
+	};
 
 	const menu = [
 		{
 			label: 'Dashboard',
 			icon: 'bi bi-house',
 			path: '/account/dashboard',
-			role: ['client', 'admin'],
+			role: ['CLIENT', 'ADMINSUPER'],
 		},
 		{
 			label: 'Booking History',
 			icon: 'bi bi-clock-history',
 			path: '/account/booking/history',
-			role: ['customer', 'admin'],
+			role: ['CLIENT', 'ADMINSUPER'],
 		},
 		{
 			label: 'Tours',
 			icon: 'bi bi-geo',
 			path: '/account/booking/tour',
-			role: ['admin'],
+			role: ['ADMINSUPER'],
 		},
 		{
 			label: 'Hotels',
 			icon: 'bi bi-house',
 			path: '/account/booking/hotel',
-			role: ['admin'],
+			role: ['ADMINSUPER'],
 		},
 		{
 			label: 'Cars',
 			icon: 'bi bi-inboxes',
 			path: '/account/booking/car',
-			role: ['admin'],
+			role: ['ADMINSUPER'],
 		},
 		{
 			label: 'Events',
 			icon: 'bi bi-calendar-event',
 			path: '/account/booking/event',
-			role: ['admin'],
+			role: ['ADMINSUPER'],
 		},
 		{
 			label: 'Spaces',
 			icon: 'bi bi-person-workspace',
 			path: '/account/booking/space',
-			role: ['admin'],
+			role: ['ADMINSUPER'],
 		},
 		{
 			label: 'Blog',
 			icon: 'bi bi-newspaper',
 			path: '/account/blog',
-			role: ['admin'],
+			role: ['ADMINSUPER'],
 		},
 		{
 			label: 'Customers',
 			icon: 'bi bi-people',
 			path: '/account/customer',
-			role: ['admin'],
+			role: ['ADMINSUPER'],
 		},
 		{
 			label: 'Mail List',
 			icon: 'bi bi-envelope',
 			path: '/account/maillist',
-			role: ['admin'],
+			role: ['ADMINSUPER'],
 		},
 		{
 			label: 'My Profile',
 			icon: 'bi bi-person',
 			path: '/account/profile',
-			role: ['customer', 'admin'],
+			role: ['CLIENT'],
 		},
 		{
 			label: 'Change Password',
 			icon: 'bi bi-lock',
 			path: '/account/password/change',
-			role: ['customer', 'admin'],
+			role: ['CLIENT'],
 		},
 	];
 
@@ -114,7 +125,7 @@ const AccountLayout = () => {
 						<div className='sidebar-menu mt-4'>
 							<ul>
 								{menu
-									.filter(v => v.role.includes(role))
+									.filter(v => v.role.includes(user.role))
 									.map((value, key) => (
 										<li key={key}>
 											<Link
@@ -130,7 +141,11 @@ const AccountLayout = () => {
 									))}
 
 								<li>
-									<Link to='#' className='d-flex align-items-center'>
+									<Link
+										to='#'
+										className='d-flex align-items-center'
+										onClick={handleLogout}
+									>
 										<i className='bi bi-box-arrow-right'></i>
 										<span>Log Out</span>
 									</Link>

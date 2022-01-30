@@ -1,12 +1,12 @@
 version: '3.8'
 
-services: 
-  app:
+services:
+  web:
     container_name: godiscoverafrica-web-prod
     image: godiscoverafrica-web-prod
-    build: 
+    build:
       context: .
       target: production
       dockerfile: ./Dockerfile.prod
-    ports: 
+    ports:
       - 80:80

@@ -1,11 +1,56 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Modal, Form, Button } from 'react-bootstrap';
+import { Modal, Form, Button, Spinner } from 'react-bootstrap';
+import { useMutation } from '@apollo/client';
+import {
+	AUTH_LOGIN_ACTION,
+	CREATE_CUSTOMER_ACTION,
+} from '../../../domain/user/action';
+import usePayload from '../../../core/hooks/usePayload';
+import Input from '../Input';
 
 const AuthForm = ({ loginShow, setLoginShow }) => {
 	const [signupShow, setSignupShow] = useState(false);
 
+	const [handleChangeAuthLogin, { payload: authLoginPayload }] = usePayload({
+		email: '',
+		password: '',
+	});
+
+	const [handleChangeCreateCustomer, { payload: createCustomerPayload }] =
+		usePayload({
+			firstname: '',
+			lastname: '',
+			phone: '',
+			email: '',
+			password: '',
+		});
+
+	const [authLogin, { loading: authLoginLoading }] = useMutation(
+		AUTH_LOGIN_ACTION,
+		{
+			onCompleted: ({ authLogin: { token } }) => {
+				localStorage.setItem('token', token);
+				window.location.reload();
+			},
+		}
+	);
+
+	const [createCustomer, { loading: createCustomerLoading }] = useMutation(
+		CREATE_CUSTOMER_ACTION,
+		{
+			onCompleted: ({ createCustomer: { token } }) => {
+				localStorage.setItem('token', token);
+				window.location.reload();
+			},
+		}
+	);
+
+	const loading = authLoginLoading || createCustomerLoading;
+
 	const handleNavigate = type => {
+		if (loading) return;
+
 		if (type === 'signup') {
 			setLoginShow(false);
 			setSignupShow(true);
@@ -20,6 +65,16 @@ const AuthForm = ({ loginShow, setLoginShow }) => {
 			setSignupShow(false);
 			setLoginShow(false);
 		}
+	};
+
+	const handleSubmit = (e, type) => {
+		e.preventDefault();
+
+		if (type === 'login')
+			authLogin({ variables: { payload: authLoginPayload } });
+
+		if (type === 'register')
+			createCustomer({ variables: { payload: createCustomerPayload } });
 	};
 
 	return (
@@ -38,14 +93,24 @@ const AuthForm = ({ loginShow, setLoginShow }) => {
 							</span>
 						</div>
 
-						<Form>
-							<Form.Control type='email' placeholder='Email Address' />
+						<Form onSubmit={e => handleSubmit(e, 'login')}>
+							<Input
+								type='email'
+								label='Email Address'
+								name='email'
+								value={authLoginPayload.email}
+								onChange={handleChangeAuthLogin}
+								loading={loading}
+							/>
 
 							<div>
-								<Form.Control
+								<Input
 									type='password'
-									placeholder='Password'
-									className='mt-3'
+									label='Password'
+									name='password'
+									value={authLoginPayload.password}
+									onChange={handleChangeAuthLogin}
+									loading={loading}
 								/>
 
 								<p className='text-right mt-2'>
@@ -55,15 +120,23 @@ const AuthForm = ({ loginShow, setLoginShow }) => {
 								</p>
 							</div>
 
-							<Button className='btn-primary btn-block font-wg-500 font-sz-normal text-uppercase mt-4'>
-								Log in
+							<Button
+								type='submit'
+								className='btn-primary btn-block font-wg-500 font-sz-normal text-uppercase mt-4'
+								disabled={loading}
+							>
+								{loading ? (
+									<Spinner size='sm' animation='border'></Spinner>
+								) : (
+									'Log In'
+								)}
 							</Button>
 						</Form>
 
 						<p className='font-sz-medium text-center py-4'>
 							Do not have an account?{' '}
 							<span
-								className='color-danger font-wg-500 cursor'
+								className='color-primary font-wg-500 cursor'
 								onClick={() => handleNavigate('signup')}
 							>
 								Sign Up
@@ -87,36 +160,56 @@ const AuthForm = ({ loginShow, setLoginShow }) => {
 							</span>
 						</div>
 
-						<Form>
+						<Form onSubmit={e => handleSubmit(e, 'register')}>
 							<div className='row'>
 								<div className='col-md-6'>
-									<Form.Control
+									<Input
 										type='text'
-										placeholder='First Name'
-										className='mb-3'
+										label='First Name'
+										name='firstname'
+										value={createCustomerPayload.firstname}
+										onChange={handleChangeCreateCustomer}
+										loading={loading}
 									/>
 								</div>
 
 								<div className='col-md-6'>
-									<Form.Control
+									<Input
 										type='text'
-										placeholder='Last Name'
-										className='mb-3'
+										label='Last Name'
+										name='lastname'
+										value={createCustomerPayload.lastname}
+										onChange={handleChangeCreateCustomer}
+										loading={loading}
 									/>
 								</div>
 							</div>
 
-							<Form.Control type='text' placeholder='Phone Number' />
-							<Form.Control
-								type='text'
-								placeholder='Email Address'
-								className='mt-3'
+							<Input
+								type='number'
+								label='Phone Number'
+								name='phone'
+								value={createCustomerPayload.phone}
+								onChange={handleChangeCreateCustomer}
+								loading={loading}
 							/>
 
-							<Form.Control
+							<Input
+								type='email'
+								label='Email Address'
+								name='email'
+								value={createCustomerPayload.email}
+								onChange={handleChangeCreateCustomer}
+								loading={loading}
+							/>
+
+							<Input
 								type='password'
-								placeholder='Password'
-								className='mt-3'
+								label='Password'
+								name='password'
+								value={createCustomerPayload.password}
+								onChange={handleChangeCreateCustomer}
+								loading={loading}
 							/>
 
 							<p className='mt-3'>
@@ -127,11 +220,11 @@ const AuthForm = ({ loginShow, setLoginShow }) => {
 										<>
 											<span>
 												I have read and accept the{' '}
-												<span className='color-danger font-wg-500 cursor'>
+												<span className='color-primary font-wg-500 cursor'>
 													Terms
 												</span>{' '}
 												and{' '}
-												<span className='color-danger font-wg-500 cursor'>
+												<span className='color-primary font-wg-500 cursor'>
 													Privacy Policy
 												</span>
 											</span>
@@ -140,15 +233,23 @@ const AuthForm = ({ loginShow, setLoginShow }) => {
 								/>
 							</p>
 
-							<Button className='bg-primary color-white btn-block font-wg-500 font-sz-normal text-uppercase mt-4'>
-								Sign up
+							<Button
+								type='submit'
+								className='bg-primary color-white btn-block font-wg-500 font-sz-normal text-uppercase mt-4'
+								disabled={loading}
+							>
+								{loading ? (
+									<Spinner size='sm' animation='border'></Spinner>
+								) : (
+									'Sign Up'
+								)}
 							</Button>
 						</Form>
 
 						<p className='font-sz-medium text-center color-dark py-4'>
 							Already have an account?{' '}
 							<span
-								className='color-danger font-wg-500 cursor'
+								className='color-primary font-wg-500 cursor'
 								onClick={() => handleNavigate('login')}
 							>
 								Log In

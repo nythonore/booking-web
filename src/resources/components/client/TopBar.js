@@ -1,8 +1,12 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import jwtDecode from 'jwt-decode';
 import AuthForm from './AuthForm';
 
 const TopBar = () => {
+	const token = localStorage.getItem('token');
+	const user = token ? jwtDecode(token) : {};
+
 	const [loginShow, setLoginShow] = useState(false);
 
 	return (
@@ -51,16 +55,28 @@ const TopBar = () => {
 						</div>
 
 						<div>
-							<Link
-								to='#'
-								className='text-white d-flex align-items-center'
-								onClick={() => setLoginShow(true)}
-							>
-								<i className='bi bi-person mr-1 font-sz-large'></i>
-								<span className='font-sz-normal font-wg-400'>
-									Sign In or Register
-								</span>
-							</Link>
+							{token ? (
+								<Link
+									to='/account/dashboard'
+									className='text-white d-flex align-items-center'
+								>
+									<i className='bi bi-person mr-1 font-sz-large'></i>
+									<span className='font-sz-normal font-wg-400'>
+										{`${user.firstname} ${user.lastname}`}
+									</span>
+								</Link>
+							) : (
+								<Link
+									to='#'
+									className='text-white d-flex align-items-center'
+									onClick={() => setLoginShow(true)}
+								>
+									<i className='bi bi-person mr-1 font-sz-large'></i>
+									<span className='font-sz-normal font-wg-400'>
+										Sign In or Register
+									</span>
+								</Link>
+							)}
 						</div>
 					</div>
 				</div>

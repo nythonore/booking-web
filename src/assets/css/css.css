@@ -182,9 +182,7 @@
 
 .item .image {
 	min-height: 210px;
-	background: linear-gradient(rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.8)),
-		url('https://i.pinimg.com/originals/c7/05/82/c70582ace59a21310b39b838b19ef5e6.jpg')
-			no-repeat;
+	background: linear-gradient(rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.8));
 	background-position: center;
 	background-size: cover;
 	padding: 20px 15px;
@@ -195,9 +193,7 @@
 .item:active .image,
 .item:focus .image {
 	min-height: 210px;
-	background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)),
-		url('https://i.pinimg.com/originals/c7/05/82/c70582ace59a21310b39b838b19ef5e6.jpg')
-			no-repeat;
+	background: linear-gradient(rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.8));
 	background-position: center;
 	background-size: cover;
 	padding: 20px 15px;
@@ -373,4 +369,30 @@
 
 a.btn {
 	line-height: 35px;
+}
+
+.dropzone-container {
+	width: 100%;
+	height: 250px;
+}
+
+.dropzone-container img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.dropzone-container i {
+	font-size: 28px;
+}
+
+.gallery-remove-icon {
+	position: absolute;
+	right: 30px;
+	top: 10px;
+	color: #ffffff;
+	background: rgba(0, 0, 0, 0.3);
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
 }

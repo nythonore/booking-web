@@ -1,14 +1,14 @@
 version: '3.8'
 
 services:
-  app:
+  web:
     container_name: godiscoverafrica-web-dev
     image: godiscoverafrica-web-dev
-    build: 
+    build:
       context: .
       target: development
       dockerfile: ./Dockerfile.dev
-    volumes: 
+    volumes:
       - ./src:/app/src
-    ports: 
+    ports:
       - 3000:3000

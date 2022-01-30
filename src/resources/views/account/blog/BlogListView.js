@@ -1,31 +1,27 @@
-import { Link, useParams } from 'react-router-dom';
-import { Table, Button, Badge, Image } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { Button, Table, Badge, Image } from 'react-bootstrap';
 import { useQuery, useMutation } from '@apollo/client';
 import { toast } from 'react-toastify';
 import {
-	LIST_ITEM_ACTION,
-	DELETE_ITEM_ACTION,
-} from '../../../../domain/item/action';
+	LIST_BLOG_ACTION,
+	DELETE_BLOG_ACTION,
+} from '../../../../domain/blog/action';
 import PageHeader from '../../../components/account/PageHeader';
 
-const BookingListView = () => {
-	const { category } = useParams();
+const BlogListView = () => {
+	const { loading, error, data } = useQuery(LIST_BLOG_ACTION);
 
-	const { loading, error, data } = useQuery(LIST_ITEM_ACTION, {
-		variables: { category },
-	});
-
-	const [deleteItem] = useMutation(DELETE_ITEM_ACTION, {
-		refetchQueries: [{ query: LIST_ITEM_ACTION, variables: { category } }],
-		onCompleted: () => toast.success('Item Deleted'),
+	const [deleteBlog] = useMutation(DELETE_BLOG_ACTION, {
+		refetchQueries: [LIST_BLOG_ACTION],
+		onCompleted: () => toast.success('Blog Deleted'),
 	});
 
 	return (
 		<>
-			<PageHeader title={`${category}s`}>
+			<PageHeader title='Blog'>
 				<Button
 					as={Link}
-					to={`/account/booking/${category}/create`}
+					to='/account/blog/create'
 					variant='secondary'
 					className='px-5'
 				>
@@ -51,16 +47,13 @@ const BookingListView = () => {
 										Title
 									</th>
 									<th className='font-sz-medium font-wg-400 color-dark'>
-										City
+										Category
 									</th>
 									<th className='font-sz-medium font-wg-400 color-dark'>
-										Location
+										Description
 									</th>
 									<th className='font-sz-medium font-wg-400 color-dark'>
-										Price
-									</th>
-									<th className='font-sz-medium font-wg-400 color-dark'>
-										Featured
+										Date Added
 									</th>
 									<th></th>
 								</tr>
@@ -69,18 +62,18 @@ const BookingListView = () => {
 							<tbody>
 								{loading ? (
 									<tr>
-										<td colSpan='8' className='text-center'>
+										<td colSpan='7' className='text-center'>
 											Loading ...
 										</td>
 									</tr>
-								) : error || data.listItem.length < 1 ? (
+								) : error || data.listBlog.length < 1 ? (
 									<tr>
-										<td colSpan='8' className='text-center'>
+										<td colSpan='7' className='text-center'>
 											No data available
 										</td>
 									</tr>
 								) : (
-									data.listItem.map((data, key) => (
+									data.listBlog.map((data, key) => (
 										<tr key={key}>
 											<td className='text-center font-sz-normal font-wg-300 color-dark'>
 												{key + 1}
@@ -95,29 +88,26 @@ const BookingListView = () => {
 											</td>
 											<td className='font-sz-normal font-wg-300 color-dark'>
 												<Link
-													to={`/${category}/${data.slug}`}
+													to={`/blog/${data.slug}`}
 													className='color-primary font-wg-400'
 												>
 													{data.title}
 												</Link>
 											</td>
 											<td className='font-sz-normal font-wg-300 color-dark'>
-												{data.city}
+												{data.category}
 											</td>
 											<td className='font-sz-normal font-wg-300 color-dark'>
-												{data.location}
+												{data.description}
 											</td>
 											<td className='font-sz-normal font-wg-300 color-dark'>
-												{data.price} RWF
-											</td>
-											<td className='font-sz-normal font-wg-300 color-dark'>
-												{data.featured ? 'Yes' : 'No'}
+												{data.createdAt}
 											</td>
 											<td className='font-sz-normal font-wg-300 color-dark'>
 												<Badge
 													as={Link}
 													variant='default'
-													to={`/account/booking/${category}/edit/${data.slug}`}
+													to={`/account/blog/edit/${data.slug}`}
 													className='bg-secondary color-white d-block w-100 py-2 cursor'
 												>
 													<i className='bi bi-pencil-square mr-1'></i>
@@ -128,7 +118,7 @@ const BookingListView = () => {
 													variant='default'
 													className='bg-danger color-white mt-2 d-block w-100 py-2 cursor'
 													onClick={() =>
-														deleteItem({ variables: { id: data.id } })
+														deleteBlog({ variables: { id: data.id } })
 													}
 												>
 													<i className='bi bi-coin mr-1'></i>
@@ -147,4 +137,4 @@ const BookingListView = () => {
 	);
 };
 
-export default BookingListView;
+export default BlogListView;

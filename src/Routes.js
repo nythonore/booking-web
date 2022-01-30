@@ -1,5 +1,7 @@
 import { useRoutes } from 'react-router-dom';
+
 import ClientLayout from './resources/layouts/ClientLayout';
+import AccountLayout from './resources/layouts/AccountLayout';
 
 import HomeView from './resources/views/HomeView';
 import BlogListView from './resources/views/blog/BlogListView';
@@ -10,11 +12,14 @@ import PartnerView from './resources/views/PartnerView';
 import TermsPrivacyView from './resources/views/TermsPrivacyView';
 import ItemFilterView from './resources/views/item/ItemFilterView';
 import ItemDetailView from './resources/views/item/ItemDetailView';
-import AccountLayout from './resources/layouts/AccountLayout';
+
 import BookingListView from './resources/views/account/booking/BookingListView';
+import BookingHistoryview from './resources/views/account/booking/BookingHistoryview';
+import BookingManageView from './resources/views/account/booking/BookingManageView';
+import AccountBlogListView from './resources/views/account/blog/BlogListView';
+import BlogManageView from './resources/views/account/blog/BlogManageView';
 import ChangePasswordView from './resources/views/account/user/ChangePasswordView';
 import ProfileView from './resources/views/account/user/ProfileView';
-import BookingHistoryview from './resources/views/account/booking/BookingHistoryview';
 
 const Routes = () => {
 	return useRoutes([
@@ -58,12 +63,28 @@ const Routes = () => {
 					children: [
 						{ path: 'history', element: <BookingHistoryview /> },
 						{ path: ':category', element: <BookingListView /> },
-						{ path: ':category/create', element: <h2>Booking Create</h2> },
-						{ path: ':category/edit/:item', element: <h2>Booking Edit</h2> },
+						{
+							path: ':category/create',
+							element: <BookingManageView type='add' />,
+						},
+						{
+							path: ':category/edit/:slug',
+							element: <BookingManageView type='edit' />,
+						},
 					],
 				},
 
-				{ path: 'blog', element: <h2>Blog</h2> },
+				{
+					path: 'blog',
+					children: [
+						{ path: '', element: <AccountBlogListView /> },
+						{ path: 'create', element: <BlogManageView type='add' /> },
+						{
+							path: 'edit/:slug',
+							element: <BlogManageView type='edit' />,
+						},
+					],
+				},
 				{ path: 'customer', element: <h2>Customer</h2> },
 				{ path: 'maillist', element: <h2>MailList</h2> },
 
