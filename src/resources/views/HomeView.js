@@ -10,11 +10,16 @@ import ItemHotel from '../components/item/ItemHotel';
 import ItemSpace from '../components/item/ItemSpace';
 import ItemTour from '../components/item/ItemTour';
 
+import { LIST_ITEM_ACTION } from '../../domain/item/action';
 import { LIST_BLOG_ACTION } from '../../domain/blog/action';
 
 const HomeView = () => {
-	const [category, setCategory] = useState('Hotel');
+	const [category, setCategory] = useState('Tour');
 	const buttons = ['Tour', 'Hotel', 'Car', 'Event', 'Space'];
+
+	const { data: itemData } = useQuery(LIST_ITEM_ACTION, {
+		variables: { category: category.toLowerCase() },
+	});
 
 	const { data: blogData } = useQuery(LIST_BLOG_ACTION);
 
@@ -94,23 +99,13 @@ const HomeView = () => {
 					</div>
 
 					<div className='row mt-5'>
-						{[1, 2, 3, 4, 5, 6, 7, 8].map((_, key) => (
-							<div className='col-md-3 mb-4'>
-								{category === 'Hotel' && (
-									<ItemHotel key={key} isFeatured={key % 3 === 0} />
-								)}
-								{category === 'Space' && (
-									<ItemSpace key={key} isFeatured={key % 4 === 0} />
-								)}
-								{category === 'Tour' && (
-									<ItemTour key={key} isFeatured={key % 2 === 0} />
-								)}
-								{category === 'Car' && (
-									<ItemCar key={key} isFeatured={key % 6 === 0} />
-								)}
-								{category === 'Event' && (
-									<ItemEvent key={key} isFeatured={key % 5 === 0} />
-								)}
+						{itemData?.listItem?.map((data, key) => (
+							<div key={key} className='col-md-3 mb-4'>
+								{category === 'Hotel' && <ItemHotel data={data} />}
+								{category === 'Space' && <ItemSpace data={data} />}
+								{category === 'Tour' && <ItemTour data={data} />}
+								{category === 'Car' && <ItemCar data={data} />}
+								{category === 'Event' && <ItemEvent data={data} />}
 							</div>
 						))}
 					</div>

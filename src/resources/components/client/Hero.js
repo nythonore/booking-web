@@ -13,9 +13,11 @@ const Hero = () => {
 		{ icon: 'bi bi-person-workspace', value: 'Spaces' },
 	];
 
-	const formInputClass = `col-12 mb-3 ${
-		['Hotels', 'Spaces'].includes(tab) ? 'col-md-4' : 'col-md-6'
-	}`;
+	// const formInputClass = `col-12 mb-3 ${
+	// 	['Hotels', 'Spaces'].includes(tab) ? 'col-md-4' : 'col-md-6'
+	// }`;
+
+	const formInputClass = 'col-12 mb-3 col-md-6';
 
 	const navigate = useNavigate();
 
@@ -83,7 +85,7 @@ const Hero = () => {
 													</InputGroup>
 												</div>
 
-												{(tab === 'Hotels' || tab === 'Spaces') && (
+												{/* {(tab === 'Hotels' || tab === 'Spaces') && (
 													<div className={formInputClass}>
 														<InputGroup>
 															<InputGroup.Text className='color-primary'>
@@ -93,7 +95,7 @@ const Hero = () => {
 															<FormControl placeholder='1 Adult - 0 Child' />
 														</InputGroup>
 													</div>
-												)}
+												)} */}
 											</div>
 
 											<Button
