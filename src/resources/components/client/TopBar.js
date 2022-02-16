@@ -26,7 +26,7 @@ const TopBar = () => {
 								</a>
 
 								<a
-									href='https://google.com'
+									href='https://www.instagram.com/godiscoverafricaltd/'
 									target='_blank'
 									rel='noreferrer'
 									className='mr-2 text-white font-sz-normal font-wg-400'
@@ -35,7 +35,7 @@ const TopBar = () => {
 								</a>
 
 								<a
-									href='https://google.com'
+									href='https://twitter.com/Godiscoverafri'
 									target='_blank'
 									rel='noreferrer'
 									className='text-white font-sz-normal font-wg-400'

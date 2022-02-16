@@ -30,7 +30,7 @@
 .hero {
 	min-height: calc(100vh - 120px);
 	background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
-		url('https://media.gq-magazine.co.uk/photos/5d13ab1c4d217b15e24bee14/16:9/w_2560%2Cc_limit/rwanda-02-gq-11dec18_b.jpg')
+		url('https://res.cloudinary.com/elab/image/upload/v1645003542/godiscoverafrica/assets/images/rytlmtwyunrg65qtxzmv.jpg')
 			no-repeat;
 	background-position: center;
 	background-size: cover;
@@ -113,23 +113,10 @@
 
 .destination {
 	min-height: 330px;
-	background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
-		url('https://media.gq-magazine.co.uk/photos/5d13ab1c4d217b15e24bee14/16:9/w_2560%2Cc_limit/rwanda-02-gq-11dec18_b.jpg')
-			no-repeat;
+	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
 	padding: 30px 15px;
-	border-radius: 8px;
-	transition: all 0.4s ease;
-}
-
-.destination:hover {
-	background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
-		url('https://media.gq-magazine.co.uk/photos/5d13ab1c4d217b15e24bee14/16:9/w_2560%2Cc_limit/rwanda-02-gq-11dec18_b.jpg')
-			no-repeat;
-	background-position: center;
-	background-size: cover;
-	padding: 30px 20px;
 	border-radius: 8px;
 	transition: all 0.4s ease;
 }

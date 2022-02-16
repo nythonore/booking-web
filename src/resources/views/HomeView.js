@@ -32,7 +32,7 @@ const HomeView = () => {
 					<div className='row'>
 						<div className='col-md-12'>
 							<p className='text-center font-sz-large font-wg-700'>
-								Top Destination
+								Top Packages
 							</p>
 							<div className='d-flex justify-content-center mt-2'>
 								<p className='title-line'></p>
@@ -42,27 +42,53 @@ const HomeView = () => {
 
 					<div className='row mt-5'>
 						<div className='col-md-6 mb-4'>
-							<Destination />
+							<Destination
+								data={{
+									title: 'Akagera',
+									cover:
+										'https://res.cloudinary.com/elab/image/upload/v1645003543/godiscoverafrica/assets/images/psgjzrphtwpnanjb93sv.jpg',
+								}}
+							/>
 						</div>
 
 						<div className='col-md-6 mb-4'>
-							<Destination />
+							<Destination
+								data={{
+									title: 'Museums',
+									cover:
+										'https://res.cloudinary.com/elab/image/upload/v1645003541/godiscoverafrica/assets/images/lzntivfto2aquz718lp4.jpg',
+								}}
+							/>
 						</div>
 
-						<div className='col-md-3 mb-4'>
-							<Destination />
+						<div className='col-md-4 mb-4'>
+							<Destination
+								data={{
+									title: 'Gorillas',
+									cover:
+										'https://res.cloudinary.com/elab/image/upload/v1645003541/godiscoverafrica/assets/images/o0thmaxxtqadisrjpuqg.jpg',
+								}}
+							/>
 						</div>
 
-						<div className='col-md-3 mb-4'>
-							<Destination />
+						<div className='col-md-4 mb-4'>
+							<Destination
+								data={{
+									title: 'Lake Kivu',
+									cover:
+										'https://res.cloudinary.com/elab/image/upload/v1645003541/godiscoverafrica/assets/images/smkmyz7bupkgctmrgixq.jpg',
+								}}
+							/>
 						</div>
 
-						<div className='col-md-3 mb-4'>
-							<Destination />
-						</div>
-
-						<div className='col-md-3 mb-4'>
-							<Destination />
+						<div className='col-md-4 mb-4'>
+							<Destination
+								data={{
+									title: 'Kibeho',
+									cover:
+										'https://res.cloudinary.com/elab/image/upload/v1645003542/godiscoverafrica/assets/images/kiicn8lucrvjtpi5apd4.jpg',
+								}}
+							/>
 						</div>
 					</div>
 				</div>

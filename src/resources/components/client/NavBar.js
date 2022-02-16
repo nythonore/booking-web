@@ -33,6 +33,18 @@ const NavBar = () => {
 							Tours
 						</Nav.Link>
 
+						<Nav.Link as={Link} to='/about'>
+							About
+						</Nav.Link>
+
+						<Nav.Link as={Link} to='/contact'>
+							Contact
+						</Nav.Link>
+
+						<Nav.Link as={Link} to='/blog'>
+							Blog
+						</Nav.Link>
+
 						<Nav.Link as={Link} to='/hotel'>
 							Hotels
 						</Nav.Link>
@@ -47,14 +59,6 @@ const NavBar = () => {
 
 						<Nav.Link as={Link} to='/space'>
 							Spaces
-						</Nav.Link>
-
-						<Nav.Link as={Link} to='/contact'>
-							Contact
-						</Nav.Link>
-
-						<Nav.Link as={Link} to='/blog'>
-							Blog
 						</Nav.Link>
 					</Nav>
 				</Navbar.Collapse>

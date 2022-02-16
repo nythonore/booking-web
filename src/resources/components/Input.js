@@ -55,7 +55,7 @@ const SelectInput = ({
 	);
 };
 
-const DateInput = ({ label, name, value, onChange, loading }) => {
+const DateInput = ({ label, name, value, onChange, loading, timeFormat }) => {
 	const handleChange = date => {
 		onChange({
 			target: {
@@ -68,7 +68,7 @@ const DateInput = ({ label, name, value, onChange, loading }) => {
 	return (
 		<Form.Group className='mb-3'>
 			<Datetime
-				timeFormat={true}
+				timeFormat={timeFormat}
 				closeOnSelect={true}
 				onChange={handleChange}
 				renderInput={(props, openCalendar) => (
@@ -136,6 +136,7 @@ const Input = ({ type = 'text', ...rest }) => {
 
 	if (type === 'select') return <SelectInput {...rest} />;
 	if (type === 'textarea') return <TextArea {...rest} />;
+	if (type === 'date') return <DateInput timeFormat={false} {...rest} />;
 	if (type === 'datetime') return <DateInput {...rest} />;
 
 	return null;
